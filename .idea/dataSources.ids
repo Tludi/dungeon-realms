@@ -1,0 +1,11 @@
+<?xml version="1.0"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails game: development" product="" version="" jdbc-version="" driver-version="" uuid="24dab302-130b-4923-9ed1-e336ee1e5f74">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/home/tim/lab/game/db/development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>jar://$USER_HOME$/.RubyMine31/config/jdbc-drivers/sqlitejdbc-v056.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>
