@@ -14,6 +14,24 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+    <br />
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :room_number %> (To link rooms together)<br />
+    <%= f.text_field :room_number %>
+    <br />
+    <%= f.label :north_exit %><br />
+    <%= f.text_field :north_exit %>
+    <br />
+    <%= f.label :south_exit %><br />
+    <%= f.text_field :south_exit %>
+    <br />
+    <%= f.label :east_exit %><br />
+    <%= f.text_field :east_exit %>
+    <br />
+    <%= f.label :west_exit %><br />
+    <%= f.text_field :west_exit %>
   </div>
   <div class="actions">
     <%= f.submit %>

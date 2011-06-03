@@ -10,12 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602050243) do
+ActiveRecord::Schema.define(:version => 20110602215322) do
 
   create_table "rooms", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
+    t.integer  "room_number"
+    t.integer  "north_exit"
+    t.integer  "south_exit"
+    t.integer  "east_exit"
+    t.integer  "west_exit"
   end
 
 end
