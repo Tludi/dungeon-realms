@@ -1,0 +1,13 @@
+<% title "Dungeon Realms" %>
+<% if notice %>
+    <p  id="notice"><%= notice %></p>
+<% end %>
+
+
+<h2>Modules</h2>
+<% @mods.each do |mod| %>
+    <div class="entry">
+        <h3><%= mod.title %>  |  <%= link_to "Show", mod %></h3>
+    </div>
+<% end %>
+

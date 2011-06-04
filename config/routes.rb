@@ -1,4 +1,7 @@
 Game::Application.routes.draw do
+  get "game/index"
+
+  resources :mods
   resources :rooms
 
   # The priority is based upon order of creation:
@@ -51,7 +54,7 @@ Game::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-   root :to => "rooms#index"
+   root :to => 'game#index' , :as => 'game'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

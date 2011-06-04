@@ -1,0 +1,19 @@
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% for mod in @mods %>
+    <tr>
+      <td><%= mod.title %></td>
+      <td><%= mod.description %></td>
+      <td><%= link_to "Show", mod %></td>
+      <td><%= link_to "Edit", edit_mod_path(mod) %></td>
+      <td><%= link_to "Destroy", mod, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Mod", new_mod_path %></p>

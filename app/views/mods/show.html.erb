@@ -1,0 +1,32 @@
+<% title "Mod" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mod.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @mod.description %>
+  <%= @mod.id %>
+</p>
+
+
+<table>
+  <tr>
+    <th>Rooms | <%= link_to "Add Room", new_room_path, :mod_id => @mod.id %></th>
+  </tr>
+  <% for room in @rooms %>
+    <tr>
+      <td><%= room.name %></td>
+      <td><%= link_to "Show", room %></td>
+      <td><%= link_to "Edit", edit_room_path(room) %></td>
+      <td><%= link_to "Delete", room, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to "Edit", edit_mod_path(@mod) %> |
+  <%= link_to "Destroy", @mod, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", mods_path %>
+</p>
