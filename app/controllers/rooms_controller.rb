@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   # GET /rooms/new.xml
   def new
-    @room = Room.new
+    @room = Room.new :mod_id => (params[:mod_id])
 
     respond_to do |format|
       format.html # new.html.erb
