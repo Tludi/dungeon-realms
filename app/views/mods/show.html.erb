@@ -6,8 +6,8 @@
 </p>
 <p>
   <strong>Description:</strong>
-  <%= @mod.description %>
-  <%= @mod.id %>
+  <%= @mod.description %> |
+  Mod ID: <%= @mod.id %>
 </p>
 
 
@@ -26,9 +26,8 @@
 </table>
 
 <p>
-  <%= link_to "Edit", edit_mod_path(@mod) %> |
-  <%= link_to "Destroy", @mod, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", mods_path %>
+  <%= link_to "Edit Mod", edit_mod_path(@mod) %> |
+  <%= link_to "Delete Mod", @mod, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Mods", mods_path %>
 </p>
 
-<%= debug params %>

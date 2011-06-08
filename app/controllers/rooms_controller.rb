@@ -2,7 +2,9 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.xml
   def index
-    @rooms = Room.all
+    @mods = Mod.all
+    @rooms = Room.all(:order => :mod_id)
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +15,14 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.xml
   def show
-    @room = Room.find(params[:id])
+    if (params[:exit])
+      @room = Room.find_by_room_number(params[:exit])
+    else
+      @room = Room.find(params[:id])      
+    end
+    
+    #module_id = @room.mod_id
+    #@mod = Mod.find_by_id(module_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,8 +33,9 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   # GET /rooms/new.xml
   def new
-    @room = Room.new :mod_id => (params[:mod_id])
-
+    @room = Room.new
+    @room.mod_id = Mod.find(params[:mod_id]).id
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @room }
@@ -40,7 +50,13 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.xml
   def create
+    #@mod = current_mod
+    #@room = @mod.rooms.build(:mod_id => (params[:mod_id]))
+    
     @room = Room.new(params[:room])
+    #@cart = current_cart
+    #product = Product.find(params[:product_id])
+    #@line_item = @cart.line_items.build(:product => product)
 
     respond_to do |format|
       if @room.save
@@ -80,4 +96,11 @@ class RoomsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def show_exit_room
+    @room = Room.find(params[:id])
+    @exit_room = Room.find_by_room_number(@room.room_number) 
+    render @room  
+end
+    
 end

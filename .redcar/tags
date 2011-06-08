@@ -1,4 +1,4 @@
-1307206758
+1307569251
 AddDescriptionToRoom	/home/tim/lab/game/db/migrate/20110602215322_add_description_to_room.rb	class AddDescriptionToRoom 
 AddModIdToRoom	/home/tim/lab/game/db/migrate/20110603191337_add_mod_id_to_room.rb	class AddModIdToRoom 
 Application	/home/tim/lab/game/config/application.rb	  class Application 
@@ -60,6 +60,7 @@ create	/home/tim/lab/game/public/javascripts/prototype.js	function create()
 cssNameFor	/home/tim/lab/game/public/javascripts/prototype.js	function cssNameFor(key)
 cumulativeOffset	/home/tim/lab/game/public/javascripts/prototype.js	function cumulativeOffset(element)
 cumulativeScrollOffset	/home/tim/lab/game/public/javascripts/prototype.js	function cumulativeScrollOffset(element)
+current_mod	/home/tim/lab/game/app/controllers/application_controller.rb	    def current_mod
 curry	/home/tim/lab/game/public/javascripts/prototype.js	function curry()
 dasherize	/home/tim/lab/game/public/javascripts/prototype.js	function dasherize()
 defer	/home/tim/lab/game/public/javascripts/prototype.js	function defer()
@@ -88,6 +89,7 @@ error_messages_for	/home/tim/lab/game/app/helpers/error_messages_helper.rb	  def
 escapeHTML	/home/tim/lab/game/public/javascripts/prototype.js	function escapeHTML()
 evalJSON	/home/tim/lab/game/public/javascripts/prototype.js	function evalJSON(sanitize)
 evalScripts	/home/tim/lab/game/public/javascripts/prototype.js	function evalScripts()
+exit_room	/home/tim/lab/game/app/helpers/rooms_helper.rb	  def exit_room
 extend	/home/tim/lab/game/public/javascripts/prototype.js	function extend(destination, source)
 extend	/home/tim/lab/game/public/javascripts/prototype.js	function extend(tagName)
 extendElementWith	/home/tim/lab/game/public/javascripts/prototype.js	function extendElementWith(element, methods)
@@ -190,6 +192,7 @@ select	/home/tim/lab/game/public/javascripts/prototype.js	function select(select
 set	/home/tim/lab/game/public/javascripts/prototype.js	function set(key, value)
 show	/home/tim/lab/game/app/controllers/mods_controller.rb	  def show
 show	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def show
+show_exit_room	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def show_exit_room
 show_title?	/home/tim/lab/game/app/helpers/layout_helper.rb	  def show_title?
 size	/home/tim/lab/game/public/javascripts/prototype.js	function size()
 size	/home/tim/lab/game/public/javascripts/prototype.js	function size()

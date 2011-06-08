@@ -3,15 +3,17 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
+    <th>Number</th>
+    <th>Module</th>
     <th></th>
   </tr>
 
 <% @rooms.each do |room| %>
   <tr>
-    <td><%= room.name %></td>
-    <td><%= link_to 'Show', room %></td>
+    <td><%= room.name %>&nbsp</td>
+    <td><%= room.room_number %>&nbsp</td>
+    <td><%= room.mod_id %></td>
+    <td><%= link_to 'Show', room,{:exit => room.north_exit} %></td>
     <td><%= link_to 'Edit', edit_room_path(room) %></td>
     <td><%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -20,5 +22,6 @@
 
 <br />
 
-<%= link_to 'New Room', new_room_path %>
-<%= link_to 'Back to Mod', mods_path %>
+<p>this is the room index file</p>
+<p>create new room from Module page</p>
+<%= link_to 'Back to Module', mods_path %>

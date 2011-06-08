@@ -12,6 +12,32 @@ a {
   color: #0000FF;
 }
 
+#fb_box {
+  background:#999;
+  background-image:url(/images/canvas.jpeg);
+  background-repeat: no-repeat;
+  width:760px;
+  height:890px;
+}
+
+#stat_bar {
+  background:#333;
+  height:40px;
+  color:white;
+}
+
+#room {
+  height:550px;
+  background:rgba(0,0,0,0.3);
+}
+
+#room_description {
+  background:tan;
+  height:280px;
+  font:2em ubuntu;
+padding:10px;
+}
+
 .clear {
   clear: both;
   height: 0;
@@ -19,7 +45,7 @@ a {
 }
 
 #container {
-  width: 75%;
+  width: 760px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -73,3 +99,7 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+
+
+

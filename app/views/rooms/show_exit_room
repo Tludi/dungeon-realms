@@ -1,0 +1,28 @@
+<!-- show individual room -->
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exit_room.name %> |
+
+  <%= @exit_room.description %>
+  <%= @exit_room.room_number %>
+    
+  <b>North exit room</b>
+  <%= @exit_room.north_exit %> |
+  <%= link_to 'North', exit_path %> |
+  <%= @exit_room.name %> |
+  
+   
+  <b>South exit room</b>
+  <%= link_to 'South', exit_path %> 
+  <%= @exit_room.south_exit %>|
+
+  <%= @exit_room.east_exit %>
+  <%= @exit_room.west_exit %>
+</p>
+
+
+<%= link_to 'Edit', edit_room_path(@exit_room) %> |
+<%= link_to 'Back', rooms_path %>

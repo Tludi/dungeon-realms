@@ -1,14 +1,46 @@
+<!-- show individual room -->
+
 <p id="notice"><%= notice %></p>
 
+<div id="fb_box">
+  <div id="stat_bar">
+    This is for the stat bar
+  </div>
+  <div id="room">
+    this is for the room
+  </div>
+  <div id="room_description">
+    <%= @room.description %>
+  </div>
+</div>
 <p>
   <b>Name:</b>
-  <%= @room.name %>
-  <%= @room.description %>
+  <%= @room.name %> |
+
   <%= @room.room_number %>
-  <%= @room.north_exit %>
-  <%= @room.south_exit %>
-  <%= @room.east_exit %>
-  <%= @room.west_exit %>
+  
+  <% if @room.north_exit %>
+    <b>North exit room</b>
+    <%= @room.north_exit %> |
+    <%= link_to 'North', room_path(:exit => @room.north_exit) %> |
+    <%= @room.name %> |
+  <% end %>
+  
+  <% if @room.south_exit %> 
+    <b>South exit room</b>
+    <%= link_to 'South', room_path(:exit => @room.south_exit) %> 
+    <%= @room.south_exit %>|
+  <% end %>
+  
+  <% if @room.east_exit %>
+    <%= @room.east_exit %>
+    <%= link_to 'East', room_path(:exit => @room.east_exit) %> |
+  <% end %>
+  
+  <% if @room.west_exit %>
+    <%= @room.west_exit %>
+    <%= link_to 'West', room_path(:exit => @room.west_exit) %> |
+  <% end %>
 </p>
 
 

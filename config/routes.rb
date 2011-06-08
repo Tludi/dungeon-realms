@@ -1,9 +1,14 @@
 Game::Application.routes.draw do
   get "game/index"
-
+  
+  #get 'rooms/:room_number' => 'rooms#show_exit_room', :as => :exit
+  
   resources :mods
   resources :rooms
-
+  
+  
+  # This route can be invoked with north_exit_url(:north_exit => rooms.id)
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
