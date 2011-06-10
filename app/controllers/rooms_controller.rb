@@ -21,6 +21,9 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])      
     end
     
+    @mod = Mod.find(@room.mod_id)
+    @monster1 = Monster.find_by_monster_number(@room.monster1)
+    
     #module_id = @room.mod_id
     #@mod = Mod.find_by_id(module_id)
 
@@ -73,7 +76,8 @@ class RoomsController < ApplicationController
   # PUT /rooms/1.xml
   def update
     @room = Room.find(params[:id])
-
+    @monsters = Monster.all
+    
     respond_to do |format|
       if @room.update_attributes(params[:room])
         format.html { redirect_to(@room, :notice => 'Room was successfully updated.') }

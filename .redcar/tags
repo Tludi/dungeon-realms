@@ -1,11 +1,14 @@
-1307569251
+1307675922
 AddDescriptionToRoom	/home/tim/lab/game/db/migrate/20110602215322_add_description_to_room.rb	class AddDescriptionToRoom 
 AddModIdToRoom	/home/tim/lab/game/db/migrate/20110603191337_add_mod_id_to_room.rb	class AddModIdToRoom 
+AddMonstersToRoom	/home/tim/lab/game/db/migrate/20110610001303_add_monsters_to_room.rb	class AddMonstersToRoom 
 Application	/home/tim/lab/game/config/application.rb	  class Application 
 ApplicationController	/home/tim/lab/game/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/tim/lab/game/app/helpers/application_helper.rb	module ApplicationHelper
 BrowsingTest	/home/tim/lab/game/test/performance/browsing_test.rb	class BrowsingTest 
 CreateMods	/home/tim/lab/game/db/migrate/20110603162528_create_mods.rb	class CreateMods 
+CreateMonsters	/home/tim/lab/game/db/migrate/20110609015350_create_monsters.rb	class CreateMonsters 
+CreateMonstertomes	/home/tim/lab/game/db/migrate/20110609032402_create_monstertomes.rb	class CreateMonstertomes 
 CreateRooms	/home/tim/lab/game/db/migrate/20110602050243_create_rooms.rb	class CreateRooms 
 ErrorMessagesHelper	/home/tim/lab/game/app/helpers/error_messages_helper.rb	module ErrorMessagesHelper
 FormBuilderAdditions	/home/tim/lab/game/app/helpers/error_messages_helper.rb	  module FormBuilderAdditions
@@ -22,6 +25,18 @@ ModsControllerTest	/home/tim/lab/game/test/functional/mods_controller_test.rb	cl
 ModsHelper	/home/tim/lab/game/app/helpers/mods_helper.rb	module ModsHelper
 ModuleTest	/home/tim/lab/game/test/unit/module_test.rb	class ModuleTest 
 ModulesControllerTest	/home/tim/lab/game/test/functional/modules_controller_test.rb	class ModulesControllerTest 
+Monster	/home/tim/lab/game/app/models/monster.rb	class Monster 
+MonsterTest	/home/tim/lab/game/test/unit/monster_test.rb	class MonsterTest 
+MonstersController	/home/tim/lab/game/app/controllers/monsters_controller.rb	class MonstersController 
+MonstersControllerTest	/home/tim/lab/game/test/functional/monsters_controller_test.rb	class MonstersControllerTest 
+MonstersHelper	/home/tim/lab/game/app/helpers/monsters_helper.rb	module MonstersHelper
+MonstersHelperTest	/home/tim/lab/game/test/unit/helpers/monsters_helper_test.rb	class MonstersHelperTest 
+Monstertome	/home/tim/lab/game/app/models/monstertome.rb	class Monstertome 
+MonstertomeTest	/home/tim/lab/game/test/unit/monstertome_test.rb	class MonstertomeTest 
+MonstertomesController	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	class MonstertomesController 
+MonstertomesControllerTest	/home/tim/lab/game/test/functional/monstertomes_controller_test.rb	class MonstertomesControllerTest 
+MonstertomesHelper	/home/tim/lab/game/app/helpers/monstertomes_helper.rb	module MonstertomesHelper
+MonstertomesHelperTest	/home/tim/lab/game/test/unit/helpers/monstertomes_helper_test.rb	class MonstertomesHelperTest 
 Room	/home/tim/lab/game/app/models/room.rb	class Room 
 RoomTest	/home/tim/lab/game/test/unit/room_test.rb	class RoomTest 
 RoomsController	/home/tim/lab/game/app/controllers/rooms_controller.rb	class RoomsController 
@@ -55,6 +70,8 @@ compact	/home/tim/lab/game/public/javascripts/prototype.js	function compact()
 concat	/home/tim/lab/game/public/javascripts/prototype.js	function concat()
 copy	/home/tim/lab/game/public/javascripts/prototype.js	function copy(methods, destination, onlyIfAbsent)
 create	/home/tim/lab/game/app/controllers/mods_controller.rb	  def create
+create	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def create
+create	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def create
 create	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def create
 create	/home/tim/lab/game/public/javascripts/prototype.js	function create()
 cssNameFor	/home/tim/lab/game/public/javascripts/prototype.js	function cssNameFor(key)
@@ -67,6 +84,8 @@ defer	/home/tim/lab/game/public/javascripts/prototype.js	function defer()
 define	/home/tim/lab/game/public/javascripts/prototype.js	function define(D)
 delay	/home/tim/lab/game/public/javascripts/prototype.js	function delay(timeout)
 destroy	/home/tim/lab/game/app/controllers/mods_controller.rb	  def destroy
+destroy	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def destroy
+destroy	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def destroy
 destroy	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def destroy
 detect	/home/tim/lab/game/public/javascripts/prototype.js	function detect(iterator, context)
 dirCheck	/home/tim/lab/game/public/javascripts/prototype.js	function dirCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
@@ -76,10 +95,15 @@ down	/home/tim/lab/game/db/migrate/20110602050243_create_rooms.rb	  def self.dow
 down	/home/tim/lab/game/db/migrate/20110602215322_add_description_to_room.rb	  def self.down
 down	/home/tim/lab/game/db/migrate/20110603162528_create_mods.rb	  def self.down
 down	/home/tim/lab/game/db/migrate/20110603191337_add_mod_id_to_room.rb	  def self.down
+down	/home/tim/lab/game/db/migrate/20110609015350_create_monsters.rb	  def self.down
+down	/home/tim/lab/game/db/migrate/20110609032402_create_monstertomes.rb	  def self.down
+down	/home/tim/lab/game/db/migrate/20110610001303_add_monsters_to_room.rb	  def self.down
 each	/home/tim/lab/game/public/javascripts/prototype.js	function each(iterator)
 each	/home/tim/lab/game/public/javascripts/prototype.js	function each(iterator, context)
 eachSlice	/home/tim/lab/game/public/javascripts/prototype.js	function eachSlice(number, iterator, context)
 edit	/home/tim/lab/game/app/controllers/mods_controller.rb	  def edit
+edit	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def edit
+edit	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def edit
 edit	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def edit
 element	/home/tim/lab/game/public/javascripts/prototype.js	function element(event)
 empty	/home/tim/lab/game/public/javascripts/prototype.js	function empty()
@@ -121,6 +145,8 @@ include	/home/tim/lab/game/public/javascripts/prototype.js	function include(patt
 include	/home/tim/lab/game/public/javascripts/prototype.js	function include(value)
 index	/home/tim/lab/game/app/controllers/game_controller.rb	  def index
 index	/home/tim/lab/game/app/controllers/mods_controller.rb	  def index
+index	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def index
+index	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def index
 index	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def index
 index	/home/tim/lab/game/public/javascripts/prototype.js	function index(value)
 indexOf	/home/tim/lab/game/public/javascripts/prototype.js	function indexOf(item, i)
@@ -168,6 +194,8 @@ merge	/home/tim/lab/game/public/javascripts/prototype.js	function merge(object)
 methodize	/home/tim/lab/game/public/javascripts/prototype.js	function methodize()
 min	/home/tim/lab/game/public/javascripts/prototype.js	function min(iterator, context)
 new	/home/tim/lab/game/app/controllers/mods_controller.rb	  def new
+new	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def new
+new	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def new
 new	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def new
 observe	/home/tim/lab/game/public/javascripts/prototype.js	function observe(element, eventName, handler)
 on	/home/tim/lab/game/public/javascripts/prototype.js	function on(element, eventName, selector, callback)
@@ -191,6 +219,8 @@ select	/home/tim/lab/game/public/javascripts/prototype.js	function select()
 select	/home/tim/lab/game/public/javascripts/prototype.js	function select(selector, scope)
 set	/home/tim/lab/game/public/javascripts/prototype.js	function set(key, value)
 show	/home/tim/lab/game/app/controllers/mods_controller.rb	  def show
+show	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def show
+show	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def show
 show	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def show
 show_exit_room	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def show_exit_room
 show_title?	/home/tim/lab/game/app/helpers/layout_helper.rb	  def show_title?
@@ -259,7 +289,12 @@ up	/home/tim/lab/game/db/migrate/20110602050243_create_rooms.rb	  def self.up
 up	/home/tim/lab/game/db/migrate/20110602215322_add_description_to_room.rb	  def self.up
 up	/home/tim/lab/game/db/migrate/20110603162528_create_mods.rb	  def self.up
 up	/home/tim/lab/game/db/migrate/20110603191337_add_mod_id_to_room.rb	  def self.up
+up	/home/tim/lab/game/db/migrate/20110609015350_create_monsters.rb	  def self.up
+up	/home/tim/lab/game/db/migrate/20110609032402_create_monstertomes.rb	  def self.up
+up	/home/tim/lab/game/db/migrate/20110610001303_add_monsters_to_room.rb	  def self.up
 update	/home/tim/lab/game/app/controllers/mods_controller.rb	  def update
+update	/home/tim/lab/game/app/controllers/monsters_controller.rb	  def update
+update	/home/tim/lab/game/app/controllers/monstertomes_controller.rb	  def update
 update	/home/tim/lab/game/app/controllers/rooms_controller.rb	  def update
 update	/home/tim/lab/game/public/javascripts/prototype.js	function update(array, args)
 update	/home/tim/lab/game/public/javascripts/prototype.js	function update(element, content)

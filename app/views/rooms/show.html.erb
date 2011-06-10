@@ -7,7 +7,16 @@
     This is for the stat bar
   </div>
   <div id="room">
-    this is for the room
+  <% if @monster1 %>
+    you see an 
+    <%= @monster1.name %>
+     huddled in the the corner picking over some rotten clothing.
+    <p><%= @monster1.name %> Statistics
+      <ul>
+        <li>Level: <%= @monster1.level %> Humanoid</li>
+      </ul>
+    </p>
+  <% end -%>
   </div>
   <div id="room_description">
     <%= @room.description %>
@@ -45,4 +54,5 @@
 
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Back', rooms_path %> |
+<%= link_to "Add Monster", new_monster_path(:room_number => @room.room_number) %>

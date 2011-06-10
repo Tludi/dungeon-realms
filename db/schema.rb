@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110603191337) do
+ActiveRecord::Schema.define(:version => 20110610001303) do
 
   create_table "mods", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(:version => 20110603191337) do
     t.datetime "updated_at"
   end
 
+  create_table "monsters", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "level"
+    t.integer  "health"
+    t.integer  "defence"
+    t.integer  "damage"
+    t.integer  "monster_number"
+    t.integer  "treasure_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "monstertomes", :force => true do |t|
+    t.string   "name"
+    t.integer  "room_id"
+    t.integer  "monster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rooms", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -37,6 +58,11 @@ ActiveRecord::Schema.define(:version => 20110603191337) do
     t.integer  "east_exit"
     t.integer  "west_exit"
     t.integer  "mod_id"
+    t.integer  "monster1"
+    t.integer  "monster2"
+    t.integer  "monster3"
+    t.integer  "monster4"
+    t.integer  "monster5"
   end
 
 end

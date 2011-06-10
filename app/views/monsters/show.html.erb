@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @monster.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @monster.description %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @monster.level %>
+</p>
+
+<p>
+  <b>Health:</b>
+  <%= @monster.health %>
+</p>
+
+<p>
+  <b>Defence:</b>
+  <%= @monster.defence %>
+</p>
+
+<p>
+  <b>Damage:</b>
+  <%= @monster.damage %>
+</p>
+
+<p>
+  <b>Monster number:</b>
+  <%= @monster.monster_number %>
+</p>
+
+<p>
+  <b>Treasure type:</b>
+  <%= @monster.treasure_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_monster_path(@monster) %> |
+<%= link_to 'Back', monsters_path %>

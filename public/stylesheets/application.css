@@ -27,15 +27,17 @@ a {
 }
 
 #room {
-  height:550px;
+  height:530px;
   background:rgba(0,0,0,0.3);
+  color:#eee;
+  padding:10px;
 }
 
 #room_description {
   background:tan;
   height:280px;
-  font:2em ubuntu;
-padding:10px;
+  font:1.5em ubuntu;
+  padding:10px;
 }
 
 .clear {

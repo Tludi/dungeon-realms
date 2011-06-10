@@ -1,4 +1,8 @@
 Game::Application.routes.draw do
+  resources :monstertomes
+
+  resources :monsters
+
   get "game/index"
   
   #get 'rooms/:room_number' => 'rooms#show_exit_room', :as => :exit

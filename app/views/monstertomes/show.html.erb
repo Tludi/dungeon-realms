@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Room:</b>
+  <%= @monstertome.room_id %>
+</p>
+
+<p>
+  <b>Monster:</b>
+  <%= @monstertome.monster_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_monstertome_path(@monstertome) %> |
+<%= link_to 'Back', monstertomes_path %>

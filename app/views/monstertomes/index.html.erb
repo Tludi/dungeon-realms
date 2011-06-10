@@ -1,0 +1,26 @@
+<h1>Listing monstertomes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Room</th>
+    <th>Monster</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @monstertomes.each do |monstertome| %>
+  <tr>
+    <td><%= monstertome.name %></td>
+    <td><%= monstertome.room_id %></td>
+    <td><%= monstertome.monster_id %></td>
+    <td><%= link_to 'Show', monstertome %></td>
+    <td><%= link_to 'Edit', edit_monstertome_path(monstertome) %></td>
+    <td><%= link_to 'Destroy', monstertome, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Monstertome', new_monstertome_path %>
