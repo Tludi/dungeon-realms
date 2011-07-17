@@ -1,0 +1,52 @@
+<% title "Character" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+<p>
+  <strong>Char Class:</strong>
+  <%= @character.char_class %>
+</p>
+<p>
+  <strong>Race:</strong>
+  <%= @character.race %>
+</p>
+<p>
+  <strong>Level:</strong>
+  <%= @character.level %>
+</p>
+<p>
+  <strong>Health:</strong>
+  <%= @character.health %>
+</p>
+<p>
+  <strong>Energy:</strong>
+  <%= @character.energy %>
+</p>
+<p>
+  <strong>Experience:</strong>
+  <%= @character.experience %>
+</p>
+<p>
+  <strong>Damage:</strong>
+  <%= @character.damage %>
+</p>
+<p>
+  <strong>Defense:</strong>
+  <%= @character.defense %>
+</p>
+<p>
+  <strong>Gold:</strong>
+  <%= @character.gold %>
+</p>
+<p>
+  <strong>Platinum:</strong>
+  <%= @character.platinum %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_character_path(@character) %> |
+  <%= link_to "Destroy", @character, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", characters_path %>
+</p>

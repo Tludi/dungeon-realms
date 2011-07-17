@@ -1,0 +1,25 @@
+one:
+  name: MyString
+  char_class: MyString
+  race: MyString
+  level: 1
+  health: 1
+  energy: 1
+  experience: 1
+  damage: 1
+  defense: 1
+  gold: 1
+  platinum: 1
+
+two:
+  name: MyString
+  char_class: MyString
+  race: MyString
+  level: 1
+  health: 1
+  energy: 1
+  experience: 1
+  damage: 1
+  defense: 1
+  gold: 1
+  platinum: 1

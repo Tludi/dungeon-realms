@@ -1,0 +1,37 @@
+<% title "Characters" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Char Class</th>
+    <th>Race</th>
+    <th>Level</th>
+    <th>Health</th>
+    <th>Energy</th>
+    <th>Experience</th>
+    <th>Damage</th>
+    <th>Defense</th>
+    <th>Gold</th>
+    <th>Platinum</th>
+  </tr>
+  <% for character in @characters %>
+    <tr>
+      <td><%= character.name %></td>
+      <td><%= character.char_class %></td>
+      <td><%= character.race %></td>
+      <td><%= character.level %></td>
+      <td><%= character.health %></td>
+      <td><%= character.energy %></td>
+      <td><%= character.experience %></td>
+      <td><%= character.damage %></td>
+      <td><%= character.defense %></td>
+      <td><%= character.gold %></td>
+      <td><%= character.platinum %></td>
+      <td><%= link_to "Show", character %></td>
+      <td><%= link_to "Edit", edit_character_path(character) %></td>
+      <td><%= link_to "Destroy", character, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Character", new_character_path %></p>
