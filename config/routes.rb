@@ -1,4 +1,6 @@
 Game::Application.routes.draw do
+  resources :characters
+
   resources :monstertomes
 
   resources :monsters

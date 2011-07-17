@@ -4,24 +4,55 @@
 
 <div id="fb_box">
   <div id="stat_bar">
-    This is for the stat bar
+    
   </div>
   <div id="room">
-  <% if @monster1 %>
-    you see an 
-    <%= @monster1.name %>
-     huddled in the the corner picking over some rotten clothing.
-    <p><%= @monster1.name %> Statistics
-      <ul>
-        <li>Level: <%= @monster1.level %> Humanoid</li>
-      </ul>
-    </p>
-  <% end -%>
+
+    <% if @room.north_exit %>
+      <div id="north_arrow">
+        <%= link_to image_tag("north_arrow.png"), room_path(:exit => @room.north_exit) %>
+      </div>
+    <% end %>
+  
+    <% if @room.south_exit %> 
+      <div id="south_arrow">
+        <%= link_to image_tag("south_arrow.png"), room_path(:exit => @room.south_exit) %> 
+      </div>
+    <% end %>
+
+    <% if @room.east_exit %> 
+      <div id="east_arrow">
+        <%= link_to image_tag("east_arrow.png"), room_path(:exit => @room.east_exit) %> 
+      </div>
+    <% end %>
+
+    <% if @room.west_exit %> 
+      <div id="west_arrow">
+        <%= link_to image_tag("west_arrow.png"), room_path(:exit => @room.west_exit) %> 
+      </div>
+    <% end %>
   </div>
+  
+  <!--
+  <div id="desc_parchment">
+     <p><%= @room.description %></p>
+  </div>
+  -->
+  
   <div id="room_description">
-    <%= @room.description %>
+    
   </div>
+  
+  
+  <div id="quickbar">
+    this is for the quickbar
+  </div>
+
+
+
 </div>
+
+
 <p>
   <b>Name:</b>
   <%= @room.name %> |

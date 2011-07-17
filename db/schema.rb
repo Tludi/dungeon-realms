@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110610001303) do
+ActiveRecord::Schema.define(:version => 20110611173059) do
+
+  create_table "characters", :force => true do |t|
+    t.string   "name"
+    t.string   "char_class"
+    t.string   "race"
+    t.integer  "level"
+    t.integer  "health"
+    t.integer  "energy"
+    t.integer  "experience"
+    t.integer  "damage"
+    t.integer  "defense"
+    t.integer  "gold"
+    t.integer  "platinum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mods", :force => true do |t|
     t.string   "title"

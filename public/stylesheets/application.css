@@ -17,28 +17,83 @@ a {
   background-image:url(/images/canvas.jpeg);
   background-repeat: no-repeat;
   width:760px;
-  height:890px;
+  height:850px;
 }
 
 #stat_bar {
-  background:#333;
-  height:40px;
+  background-image:url(/images/avatar_bar.png);
+  background-repeat: no-repeat;
+  height:79px;
+  width:283px;
   color:white;
+  position:absolute;
+  margin:20px;
 }
 
 #room {
-  height:530px;
+  height:570px;
   background:rgba(0,0,0,0.3);
   color:#eee;
   padding:10px;
 }
 
 #room_description {
-  background:tan;
-  height:280px;
-  font:1.5em ubuntu;
+  background:rgba(0,0,0,0.1);
+  color:#eee;
+  height:190px;
+  font:1.3em ubuntu;
   padding:10px;
+  margin:0 5px;
 }
+
+#desc_parchment {
+  width:261px;
+  height:211px;
+  background-image:url(/images/des-parchment-250x300.gif);
+  background-repeat: no-repeat;
+  padding:10px 30px;
+  position:absolute;
+  top:400px;
+  right:350px;
+}
+
+#desc_parchment p {
+  width:240px;
+  height:200px;
+}  
+
+#quickbar {
+  background:#333;
+  height:60px;
+  color:white;
+}
+
+#north_arrow, #south_arrow, #east_arrow, #west_arrow{
+  width:64px;
+  height:64px;
+  position:relative;
+}
+
+#north_arrow{
+  top:100px;
+  left:335px;
+}
+
+#south_arrow{
+  top:400px;
+  left:335px;
+}
+
+#east_arrow{
+  top:140px;
+  left:535px;
+}
+
+#west_arrow{
+  top:80px;
+  left:135px;
+}
+
 
 .clear {
   clear: both;
