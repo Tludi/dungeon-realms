@@ -23,7 +23,6 @@ class ModsController < ApplicationController
 
   def edit
     @mod = Mod.find(params[:id])
-    @temp_var = 6
   end
 
   def update
