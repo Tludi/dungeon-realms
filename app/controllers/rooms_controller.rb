@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   def index
     @mods = Mod.all
     @rooms = Room.all(:order => :mod_id)
-
+    @monsters = Monster.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,17 +15,19 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.xml
   def show
+
+    @character = Character.first
+
     if (params[:exit])
-      @room = Room.find_by_room_number(params[:exit])
+      @room = Room.find_by_id(params[:exit])
+      @monster1 = @room.monster1
     else
-      @room = Room.find(params[:id])      
+      @room = Room.find(params[:id])     
     end
     
-    @mod = Mod.find(@room.mod_id)
-    @monster1 = Monster.find_by_monster_number(@room.monster1)
-    
-    #module_id = @room.mod_id
-    #@mod = Mod.find_by_id(module_id)
+    if (params[:attack])
+      Room.attack_mode(@room.id, @monster1.id)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -105,6 +107,18 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @exit_room = Room.find_by_room_number(@room.room_number) 
     render @room  
-end
+  end
+
+  def attack
+    @room = Room.find(params[:id])
+    @monster1 = Monster.find_by_id(params[:mon_id])
+    @character = Character.first
+    @character.health +=3
+    @character.save
+    #character_id = Character.find_by_id(params[:char_id])
+    #monster_id = Monster.find_by_id(params[:mon_id])
+    #Room.attack_mode(character_id, monster_id)
+    redirect_to @room
+  end
     
 end

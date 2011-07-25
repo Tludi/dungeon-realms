@@ -23,30 +23,30 @@
     <br />
     <%= f.label :north_exit %><br />
     <%= f.select(:north_exit, Room.find(:all, :conditions => {:mod_id => @room.mod_id}).collect {|m|
-        [m.name, m.id]}) %>
+        [m.name, m.id]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :south_exit %><br />
     <%= f.select(:south_exit, Room.find(:all, :conditions => {:mod_id => @room.mod_id}).collect {|m|
-        [m.name, m.id]}) %>
+        [m.name, m.id]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :east_exit %><br />
     <%= f.select(:east_exit, Room.find(:all, :conditions => {:mod_id => @room.mod_id}).collect {|m|
-        [m.name, m.id]}) %>
+        [m.name, m.id]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :west_exit %><br />
     <%= f.select(:west_exit, Room.find(:all, :conditions => {:mod_id => @room.mod_id}).collect {|m|
-        [m.name, m.id]}) %>
+        [m.name, m.id]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :mod_number %><br />
     <%= f.text_field :mod_id %>
     <br />
     <%= f.label :first_monster %><br />
     <%= f.select(:monster1, Monster.all.collect {|m|
-        [m.name, m.monster_number]}) %>
+        [m.name, m.monster_number]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :second_monster %><br />
     <%= f.select(:monster2, Monster.all.collect {|m|
-        [m.name, m.monster_number]}) %>
+        [m.name, m.monster_number]}, {:prompt => "select (nothing yet)"}) %>
   </div>
 </br>
   <div class="actions">

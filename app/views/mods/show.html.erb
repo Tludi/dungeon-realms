@@ -15,9 +15,13 @@
   <tr>
   <th>Rooms | <%= link_to "Add Room", new_room_path(:mod_id => @mod.id) %></th>
   </tr>
-  <% for room in @rooms %>
+  <% @rooms.each do |room| %>
     <tr>
       <td><%= room.name %></td>
+      <td> 
+      <td> 1st Monster - <%= Mod.get_monster_name(room.monster1) %>
+      <td> 2nd Monster - <%= Mod.get_monster_name(room.monster2) %>
+
       <td><%= link_to "Show", room %></td>
       <td><%= link_to "Edit", edit_room_path(room) %></td>
       <td><%= link_to "Delete", room, :confirm => 'Are you sure?', :method => :delete %></td>

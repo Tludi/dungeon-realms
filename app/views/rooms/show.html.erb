@@ -31,14 +31,29 @@
         <%= link_to image_tag("west_arrow.png"), room_path(:exit => @room.west_exit) %> 
       </div>
     <% end %>
+    
+
+    <div id="character_card">
+      <h3><%= @character.name %></h3>
+      <h4>Health: <%= @character.health %></h4>
+    </div>
+    
+
+    <% if @room.monster1 & @room.monster1 != 0%>  
+      <div id = "monster_card">
+        <h3><%= Monster.get_monster_info(@monster1, "name") %></h3>
+        <h4>Health: <%= Monster.get_monster_info(@monster1, "health") %></h4>
+      </div>
+      
+      <div id="attack_button">
+        <%= @room.id %>
+        <%= button_to "Attack!", attack_rooms_path(:id => @room.id, :mon_id => @monster1 ) %>
+      </div>
+    <% end -%>
+
+
+
   </div>
-  
-  <!--
-  <div id="desc_parchment">
-     <p><%= @room.description %></p>
-  </div>
-  -->
-  
   <div id="room_description">
     
   </div>
@@ -57,7 +72,7 @@
   <b>Name:</b>
   <%= @room.name %> |
 
-  <%= @room.room_number %>
+  <%= @room.id %>
   
   <% if @room.north_exit %>
     <b>North exit room</b>

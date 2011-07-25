@@ -46,6 +46,44 @@ a {
   margin:0 5px;
 }
 
+#character_card {
+  width:200px;  
+  height:300px;
+  border:solid 2px;
+  position:relative;
+  top:100px;
+  left:50px;
+  padding:10px;
+}
+
+#monster_card {
+  width:200px;  
+  height:300px;
+  border:solid 2px;
+  position:relative;
+  top:-230px;
+  left:460px;
+  padding:10px;
+}
+
+#attack_button {
+  width:100px;
+  height:40px;
+  position:absolute;
+  top:400px;
+  left:430px;
+  border:solid 2px black;
+  background-color:maroon;
+  text-align:center;
+  padding-top:10px;
+}
+
+#attack_button a {
+  text-decoration:none;
+  color:#fff;
+  font-size:1.5em;
+}
+
 #desc_parchment {
   width:261px;
   height:211px;
@@ -54,7 +92,7 @@ a {
   padding:10px 30px;
   position:absolute;
   top:400px;
-  right:350px;
+  right:370px;
 }
 
 #desc_parchment p {

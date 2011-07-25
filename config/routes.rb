@@ -10,11 +10,15 @@ Game::Application.routes.draw do
   #get 'rooms/:room_number' => 'rooms#show_exit_room', :as => :exit
   
   resources :mods
-  resources :rooms
   
+  resources :rooms do
+     collection do
+      put 'attack'
+    end
+  end
   
-  # This route can be invoked with north_exit_url(:north_exit => rooms.id)
-  
+  match 'rooms/attack'  => 'rooms#attack', :as => :attack
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
