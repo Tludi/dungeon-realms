@@ -66,7 +66,7 @@ a {
   padding:10px;
 }
 
-#attack_button {
+#attack_button, #heal_button {
   width:100px;
   height:40px;
   position:absolute;
@@ -78,7 +78,12 @@ a {
   padding-top:10px;
 }
 
-#attack_button a {
+#heal_button {
+  top:300px;
+  background-color:DodgerBlue;
+}
+
+#attack_button a, #heal_button a {
   text-decoration:none;
   color:#fff;
   font-size:1.5em;

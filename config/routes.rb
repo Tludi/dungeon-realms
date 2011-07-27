@@ -11,13 +11,7 @@ Game::Application.routes.draw do
   
   resources :mods
   
-  resources :rooms do
-     collection do
-      put 'attack'
-    end
-  end
-  
-  match 'rooms/attack'  => 'rooms#attack', :as => :attack
+  resources :rooms
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

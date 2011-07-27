@@ -80,13 +80,25 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @monsters = Monster.all
     
-    respond_to do |format|
-      if @room.update_attributes(params[:room])
-        format.html { redirect_to(@room, :notice => 'Room was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @room.errors, :status => :unprocessable_entity }
+    if params[:game_option]
+      Character.options(params[:game_option])
+      redirect_to(@room, :notice => @notice)
+    else
+    # if params[:game_option] == "attack"
+    #   Character.take_damage
+    #   redirect_to(@room, :notice => "You were hit!")
+    # elsif params[:game_option] == "heal"
+    #   Character.heal
+    #   redirect_to(@room, :notice => "You were healed!")
+    # else
+      respond_to do |format|
+        if @room.update_attributes(params[:room])
+          format.html { redirect_to(@room, :notice => "Room was updated successfully!") }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @room.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
@@ -118,7 +130,7 @@ class RoomsController < ApplicationController
     #character_id = Character.find_by_id(params[:char_id])
     #monster_id = Monster.find_by_id(params[:mon_id])
     #Room.attack_mode(character_id, monster_id)
-    redirect_to @room
+    redirect_to @room, :monster1 => @monster1.id
   end
     
 end
