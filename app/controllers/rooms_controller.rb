@@ -16,17 +16,14 @@ class RoomsController < ApplicationController
   # GET /rooms/1.xml
   def show
 
-    @character = Character.first
+    @character = current_character
 
     if (params[:exit])
       @room = Room.find_by_id(params[:exit])
       @monster1 = @room.monster1
     else
-      @room = Room.find(params[:id])     
-    end
-    
-    if (params[:attack])
-      Room.attack_mode(@room.id, @monster1.id)
+      @room = Room.find(params[:id])
+      @monster1 = @room.monster1     
     end
 
     respond_to do |format|
@@ -80,18 +77,18 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @monsters = Monster.all
     
-    if params[:game_option]
-      Character.options(params[:game_option])
-      redirect_to(@room, :notice => @notice)
-    else
-    # if params[:game_option] == "attack"
-    #   Character.take_damage
-    #   redirect_to(@room, :notice => "You were hit!")
-    # elsif params[:game_option] == "heal"
-    #   Character.heal
-    #   redirect_to(@room, :notice => "You were healed!")
-    # else
-      respond_to do |format|
+    respond_to do |format|
+      if params[:game_option]
+        # Character.options(params[:game_option])
+        if params[:monster_id]
+           Character.options(params[:game_option])
+          Monster.options(params[:game_option], params[:monster_id])
+        else
+          Character.options(params[:game_option])
+        end
+        format.html {redirect_to(@room, :notice => @notice)}
+        format.xml {head :ok}
+      else
         if @room.update_attributes(params[:room])
           format.html { redirect_to(@room, :notice => "Room was updated successfully!") }
           format.xml  { head :ok }

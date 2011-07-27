@@ -48,13 +48,21 @@
       <div id="attack_button">
         <%= @room.monster1%>
         <%= link_to "Attack!", room_path(@room,  
-                :game_option => "attack"),
+                :game_option => "attack",
+                :monster_id => @room.monster1),
                 :method => :put
          %>
       </div>
       <div id="heal_button">
         <%= link_to "Heal", room_path(@room,  
                 :game_option => "heal"),
+                :method => :put
+         %>
+      </div>
+      <div id="monster_heal_button">
+        <%= link_to "Heal Monster", room_path(@room,  
+                :game_option => "heal", 
+                :monster_id => @room.monster1),
                 :method => :put
          %>
       </div>

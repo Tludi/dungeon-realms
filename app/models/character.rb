@@ -5,17 +5,19 @@ class Character < ActiveRecord::Base
     @option = option
     if @option == "attack"
       take_damage
+      @notice = @output
     else @option == "heal"
       heal
+      @notice = @output
     end
   end
 
   def self.take_damage
-      @damage = dice_roll(6)
-      @character = Character.first
-      @character.health -= @damage
-      @character.save
-      @notice = "You were hit!"
+      damage = dice_roll(6)
+      character = Character.first
+      character.health -= damage
+      character.save
+      @output = "You were hit!"
   end
 
   def self.heal
@@ -23,11 +25,23 @@ class Character < ActiveRecord::Base
     @character = Character.first
     @character.health += @healing
     @character.save
-    @notice = "You were healed!"
+    @output = "You were healed!"
   end
 
   def self.dice_roll(die)
     @die_roll = 1+rand(die)
   end
+
+private
+
+  def self.reset_stats
+    character = Character.first
+    monster = Monster.find_by_name("Orc")
+    character.health = 20
+    monster.health = 10
+    character.save
+    monster.save
+  end
+
 
 end
