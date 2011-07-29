@@ -10,7 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110727044240) do
+ActiveRecord::Schema.define(:version => 20110729042704) do
+
+  create_table "battles", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -24,6 +29,12 @@ ActiveRecord::Schema.define(:version => 20110727044240) do
     t.integer  "defense"
     t.integer  "gold"
     t.integer  "platinum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

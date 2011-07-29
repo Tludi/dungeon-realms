@@ -6,6 +6,7 @@ class ModsController < ApplicationController
   def show
     @mod = Mod.find(params[:id])
     @rooms = @mod.rooms.all
+    @room = @mod.rooms.first
   end
 
   def new

@@ -4,11 +4,12 @@ class Character < ActiveRecord::Base
   def self.options(option)
     @option = option
     if @option == "attack"
-      take_damage
-      @notice = @output
+      attack_chance
+      if @die_roll >= 19
+        take_damage
+      end
     else @option == "heal"
       heal
-      @notice = @output
     end
   end
 
@@ -17,19 +18,21 @@ class Character < ActiveRecord::Base
       character = Character.first
       character.health -= damage
       character.save
-      @output = "You were hit!"
   end
 
   def self.heal
-    @healing = dice_roll(6)
-    @character = Character.first
-    @character.health += @healing
-    @character.save
-    @output = "You were healed!"
+    healing = dice_roll(6)
+    character = Character.first
+    character.health += healing
+    character.save
   end
 
   def self.dice_roll(die)
     @die_roll = 1+rand(die)
+  end
+
+  def self.attack_chance
+    @die_roll = dice_roll(20)
   end
 
 private

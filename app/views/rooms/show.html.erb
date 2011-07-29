@@ -46,7 +46,6 @@
       </div>
       
       <div id="attack_button">
-        <%= @room.monster1%>
         <%= link_to "Attack!", room_path(@room,  
                 :game_option => "attack",
                 :monster_id => @room.monster1),

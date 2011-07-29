@@ -17,7 +17,6 @@ class RoomsController < ApplicationController
   def show
 
     @character = current_character
-
     if (params[:exit])
       @room = Room.find_by_id(params[:exit])
       @monster1 = @room.monster1
@@ -81,8 +80,8 @@ class RoomsController < ApplicationController
       if params[:game_option]
         # Character.options(params[:game_option])
         if params[:monster_id]
-           Character.options(params[:game_option])
-          Monster.options(params[:game_option], params[:monster_id])
+          Character.options(params[:game_option])
+          Battle.options(params[:game_option], params[:monster_id])
         else
           Character.options(params[:game_option])
         end

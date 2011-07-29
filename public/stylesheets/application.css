@@ -161,6 +161,37 @@ a {
   margin-top: 20px;
 }
 
+
+#city_map{
+  width:700px;
+  height:511px;
+  background-image:url('/images/Village.png');
+}
+
+#mod_image{
+  width:700px;
+  height:511px;
+  background-image:url('/images/Village.png');
+  margin:10px; 
+}
+
+#mod_image a {
+  text-decoration:none;
+  position:relative;
+  left:520px;
+  top:235px;
+  font-size:1.5em;
+}
+
+.room_listing{
+  margin:10px 5px;
+  border:solid 2px;
+  background-color:beige;
+}
+
+/* Flash notice styling*/
+
+
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;

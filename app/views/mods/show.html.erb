@@ -1,37 +1,39 @@
-<% title "Mod" %>
+
 
 <p>
-  <strong>Title:</strong>
-  <%= @mod.title %>
+  <%= @mod.title %> | Mod ID: <%= @mod.id %>
 </p>
 <p>
   <strong>Description:</strong>
   <%= @mod.description %> |
-  Mod ID: <%= @mod.id %>
 </p>
 
+<div id="mod_image">
+  <%= link_to "D", room_path(@room) %>
+</div>
 
-<table>
-  <tr>
-  <th>Rooms | <%= link_to "Add Room", new_room_path(:mod_id => @mod.id) %></th>
-  </tr>
-  <% @rooms.each do |room| %>
+<div class="room_listing">
+  <table>
     <tr>
-      <td><%= room.name %></td>
-      <td> 
-      <td> 1st Monster - <%= Mod.get_monster_name(room.monster1) %>
-      <td> 2nd Monster - <%= Mod.get_monster_name(room.monster2) %>
-
-      <td><%= link_to "Show", room %></td>
-      <td><%= link_to "Edit", edit_room_path(room) %></td>
-      <td><%= link_to "Delete", room, :confirm => 'Are you sure?', :method => :delete %></td>
+    <th>Rooms | <%= link_to "Add Room", new_room_path(:mod_id => @mod.id) %></th>
     </tr>
-  <% end %>
-</table>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td> 
+        <td> 1st Monster - <%= Mod.get_monster_name(room.monster1) %>
+        <td> 2nd Monster - <%= Mod.get_monster_name(room.monster2) %>
 
-<p>
-  <%= link_to "Edit Mod", edit_mod_path(@mod) %> |
-  <%= link_to "Delete Mod", @mod, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View Mods", mods_path %>
-</p>
+        <td><%= link_to "Show", room %></td>
+        <td><%= link_to "Edit", edit_room_path(room) %></td>
+        <td><%= link_to "Delete", room, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
 
+  <p>
+    <%= link_to "Edit Mod", edit_mod_path(@mod) %> |
+    <%= link_to "Delete Mod", @mod, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "View Mods", mods_path %>
+  </p>
+</div>
