@@ -1,7 +1,5 @@
 <!-- show individual room -->
 
-<p id="notice"><%= notice %></p>
-
 <div id="fb_box">
   <div id="stat_bar">
     
@@ -39,39 +37,44 @@
     </div>
     
 
-    <% if @room.monster1 & @room.monster1 != 0%>  
+    <% if @monster1  %>  
       <div id = "monster_card">
-        <h3><%= Monster.get_monster_info(@monster1, "name") %></h3>
-        <h4>Health: <%= Monster.get_monster_info(@monster1, "health") %></h4>
+        <h3><%= @monster1.name %></h3>
+        <h4>Health: <%= @monster1.health %></h4>
       </div>
-      
-      <div id="attack_button">
-        <%= link_to "Attack!", room_path(@room,  
-                :game_option => "attack",
-                :monster_id => @room.monster1),
-                :method => :put
-         %>
-      </div>
-      <div id="heal_button">
-        <%= link_to "Heal", room_path(@room,  
-                :game_option => "heal"),
-                :method => :put
-         %>
-      </div>
-      <div id="monster_heal_button">
-        <%= link_to "Heal Monster", room_path(@room,  
-                :game_option => "heal", 
-                :monster_id => @room.monster1),
-                :method => :put
-         %>
-      </div>
+       
+      <% if @monster1.health > 0.0  %>
+        <div id="attack_button">
+          <%= link_to "Attack!", room_path(@room,  
+                  :game_option => "attack",
+                  :monster_id => @room.monster1),
+                  :method => :put
+           %>
+        </div>
+
+        <div id="monster_heal_button">
+          <%= link_to "Heal Monster", room_path(@room,  
+                  :game_option => "heal", 
+                  :monster_id => @room.monster1),
+                  :method => :put
+           %>
+        </div>
+      <% end -%>
+        <div id="heal_button">
+          <%= link_to "Heal", room_path(@room,  
+                  :game_option => "heal"),
+                  :method => :put
+           %>
+        </div>
     <% end -%>
 
 
 
   </div>
   <div id="room_description">
-    
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
   </div>
   
   

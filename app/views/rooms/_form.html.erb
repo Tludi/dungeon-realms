@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
     <br />
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
     <br />
     <%= f.label :room_number %> (To link rooms together)<br />
     <%= f.text_field :room_number %>
@@ -42,7 +42,7 @@
     <br />
     <%= f.label :first_monster %><br />
     <%= f.select(:monster1, Monster.all.collect {|m|
-        [m.name, m.monster_number]}, {:prompt => "select (nothing yet)"}) %>
+        [m.name, m.id]}, {:prompt => "select (nothing yet)"}) %>
     <br />
     <%= f.label :second_monster %><br />
     <%= f.select(:monster2, Monster.all.collect {|m|
@@ -53,4 +53,5 @@
   <%= f.submit %>
   </div>
 <% end %>
+ 
  

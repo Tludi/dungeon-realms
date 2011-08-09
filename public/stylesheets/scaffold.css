@@ -20,6 +20,8 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
+
+
 #notice {
   color: green;
 }
@@ -47,7 +49,7 @@ div.field, div.actions {
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
-  color: #fff;
+  color: #333;
 }
 
 #error_explanation ul li {

@@ -1,4 +1,12 @@
 Game::Application.routes.draw do
+  get "battle/index"
+
+  get "battle/show"
+
+  get "battle/new"
+
+  get "battle/create"
+
   resources :cities
 
   resources :characters

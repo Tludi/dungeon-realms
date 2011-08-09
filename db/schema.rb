@@ -10,9 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729042704) do
+ActiveRecord::Schema.define(:version => 20110809023701) do
 
   create_table "battles", :force => true do |t|
+    t.string   "name"
+    t.integer  "room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,6 +33,10 @@ ActiveRecord::Schema.define(:version => 20110729042704) do
     t.integer  "platinum"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "to_hit"
+    t.integer  "fatigue"
+    t.integer  "endurance"
+    t.integer  "strength"
   end
 
   create_table "cities", :force => true do |t|
@@ -64,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20110729042704) do
     t.integer  "treasure_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "to_hit"
   end
 
   create_table "monstertomes", :force => true do |t|

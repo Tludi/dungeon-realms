@@ -3,19 +3,28 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Number | </th>
-    <th>Module | </th>
-    <th>Monster 1 | </th>
-    <th>Monster 2 | </th>
+    <th>ID</th>
+    <th>Module</th>
+    <th>Monster 1</th>
+    <th>Monster 2</th>
   </tr>
 
 <% @rooms.each do |room| %>
   <tr>
     <td><%= room.name %>&nbsp</td>
-    <td><%= room.room_number %>&nbsp</td>
-    <td><%= room.mod_id %></td>
-    <td><%= room.monster1 %> 
-    <td><%= room.monster2 %> 
+    <td><%= room.id %>&nbsp</td>
+    <td><%= room.mod.title %></td>
+    <%  if room.monsters[0] != nil %>
+      <td><%= room.monsters[0].name %>
+    <% else %>
+      <td>---
+    <% end -%>
+    <%  if room.monsters[1] != nil %>
+      <td><%= room.monsters[1].name %>
+    <% else %>
+      <td>---
+    <% end -%>
+
   
     <td><%= link_to 'Show', room,{:exit => room.north_exit} %></td>
     <td><%= link_to 'Edit', edit_room_path(room) %></td>

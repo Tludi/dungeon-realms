@@ -1,5 +1,9 @@
 class Character < ActiveRecord::Base
-  attr_accessible :name, :char_class, :race, :level, :health, :energy, :experience, :damage, :defense, :gold, :platinum
+  attr_accessible :response, :name, :char_class, :race, :level, :health, :energy, :experience, :damage, :defense, :gold, :platinum
+  
+  def initialize(response)
+    @response = response
+  end
 
   def self.options(option)
     @option = option
@@ -7,6 +11,7 @@ class Character < ActiveRecord::Base
       attack_chance
       if @die_roll >= 19
         take_damage
+        @response = "You were hit for {#@damage} health."
       end
     else @option == "heal"
       heal
@@ -14,10 +19,11 @@ class Character < ActiveRecord::Base
   end
 
   def self.take_damage
-      damage = dice_roll(6)
+      @damage = dice_roll(6)
       character = Character.first
-      character.health -= damage
+      character.health -= @damage
       character.save
+      
   end
 
   def self.heal
